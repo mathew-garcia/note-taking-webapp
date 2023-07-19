@@ -70,62 +70,62 @@
       </div>
     </div>
     <main>
-      <h1>This is my navbar...</h1>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac semper
-        justo. Proin luctus, lacus vitae commodo tristique, quam justo ultricies
-        ipsum, a ultricies turpis lorem nec mi. Suspendisse blandit ligula at
-        dui posuere dignissim. Integer pretium, est eu aliquet ultrices, tortor
-        velit commodo sem, sit amet condimentum nunc nunc in lectus. Fusce ut
-        sapien vitae lectus rutrum feugiat. In hac habitasse platea dictumst.
-        Curabitur faucibus nunc ac purus aliquam, id tempor mauris aliquam.
-        Vestibulum non elit tincidunt, rhoncus justo at, ullamcorper ligula.
-        <br /><br />
-        Nullam volutpat pharetra luctus. Sed consectetur eros id leo commodo,
-        non tristique ex varius. Aenean sed pharetra odio. Integer volutpat
-        ultrices tortor non pharetra. Fusce dictum, sapien ac ullamcorper
-        fermentum, orci lorem convallis nisi, non interdum elit metus vel nunc.
-        Mauris pellentesque dolor a purus euismod, sit amet cursus ligula
-        fermentum. Sed sed elementum mauris. Vestibulum et lectus vitae sem
-        congue rutrum. Phasellus ut luctus massa.
-        <br /><br />
-        Praesent pellentesque velit id gravida ultricies. Maecenas id semper
-        ligula. Duis sit amet aliquam sem, vitae varius urna. Donec mattis massa
-        ac erat aliquam, eu tincidunt nulla lobortis. Vivamus rhoncus, nisl id
-        efficitur euismod, neque arcu aliquet felis, sit amet fermentum sapien
-        sapien nec erat. Mauris non risus vel mi consectetur finibus. Sed nec
-        placerat ligula. Ut posuere sem eu lorem sollicitudin, id ultricies est
-        rhoncus. Sed tempor facilisis nibh, id aliquam massa. Morbi pellentesque
-        consequat nisi, id posuere ex vehicula vitae.
-        <br /><br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac semper
-        justo. Proin luctus, lacus vitae commodo tristique, quam justo ultricies
-        ipsum, a ultricies turpis lorem nec mi. Suspendisse blandit ligula at
-        dui posuere dignissim. Integer pretium, est eu aliquet ultrices, tortor
-        velit commodo sem, sit amet condimentum nunc nunc in lectus. Fusce ut
-        sapien vitae lectus rutrum feugiat. In hac habitasse platea dictumst.
-        Curabitur faucibus nunc ac purus aliquam, id tempor mauris aliquam.
-        Vestibulum non elit tincidunt, rhoncus justo at, ullamcorper ligula.
-        <br /><br />
-        Nullam volutpat pharetra luctus. Sed consectetur eros id leo commodo,
-        non tristique ex varius. Aenean sed pharetra odio. Integer volutpat
-        ultrices tortor non pharetra. Fusce dictum, sapien ac ullamcorper
-        fermentum, orci lorem convallis nisi, non interdum elit metus vel nunc.
-        Mauris pellentesque dolor a purus euismod, sit amet cursus ligula
-        fermentum. Sed sed elementum mauris. Vestibulum et lectus vitae sem
-        congue rutrum. Phasellus ut luctus massa.
-        <br /><br />
-        Praesent pellentesque velit id gravida ultricies. Maecenas id semper
-        ligula. Duis sit amet aliquam sem, vitae varius urna. Donec mattis massa
-        ac erat aliquam, eu tincidunt nulla lobortis. Vivamus rhoncus, nisl id
-        efficitur euismod, neque arcu aliquet felis, sit amet fermentum sapien
-        sapien nec erat. Mauris non risus vel mi consectetur finibus. Sed nec
-        placerat ligula. Ut posuere sem eu lorem sollicitudin, id ultricies est
-        rhoncus. Sed tempor facilisis nibh, id aliquam massa. Morbi pellentesque
-        consequat nisi, id posuere ex vehicula vitae.
-      </p>
+      <h1 id="note-name"></h1>
+      <div id="editor-container">
+        <form class="editor-form">
+          <button class="editorButton" type="button" data-cmd="justifyLeft">
+            <i class="fa-solid fa-align-left" name="active"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="justifyCenter">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="justifyFull">
+            <i class="fa-solid fa-align-justify"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="justifyRight">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="bold">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="italic">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="underline">
+            <i class="fa-solid fa-underline"></i>
+          </button>
+          <button
+            class="editorButton"
+            type="button"
+            data-cmd="insertOrderedList"
+          >
+            <i class="fa-solid fa-list-ol"></i>
+          </button>
+          <button
+            class="editorButton"
+            type="button"
+            data-cmd="insertUnorderedList"
+          >
+            <i class="fa-solid fa-list-ul"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="insertImage">
+            <i class="fa-solid fa-file-image"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="createLink">
+            <i class="fa-solid fa-link"></i>
+          </button>
+          <button class="editorButton" type="button" data-cmd="showCode">
+            <i class="fa-solid fa-code"></i>
+          </button>
+        </form>
+        <div class="editor-content" contenteditable="true"></div>
+        <button id="save-note-button">Save</button>
+      </div>
     </main>
+    <script
+      src="https://kit.fontawesome.com/e38391ffd7.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

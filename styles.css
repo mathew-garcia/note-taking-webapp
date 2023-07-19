@@ -21,7 +21,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #29f8fe;
 }
 
 .navbar {
@@ -70,11 +70,6 @@ body::-webkit-scrollbar-thumb {
   margin-left: 1rem;
 }
 
-/* .arrow {
-  transform: rotateY(0deg);
-  transform: transform var(--transition-speed);
-} */
-
 .link-text {
   display: none;
   margin-left: 1rem;
@@ -95,7 +90,7 @@ a {
   transition: var(--transition-speed) ease;
 }
 
-/* small screens */
+/* SMALL SCREENS NAVBAR CSS */
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
@@ -113,7 +108,7 @@ a {
   }
 }
 
-/* large screens */
+/* LARGE SCREENS NAVBAR CSS */
 @media only screen and (min-width: 600px) {
   .navbar {
     width: 5rem;
@@ -140,14 +135,7 @@ a {
   }
 }
 
-/* .navbar:hover .arrow {
-  transform: rotateY(-180deg);
-  transition: transform var(--transition-speed);
-} */
-
-/* CONTINUE TUTORIAL AT !0M */
-
-/* Side bar and notebook css */
+/* SIDE BAR AND NOTEBOOK/NOTES CSS */
 
 .sidebar {
   width: 11rem;
@@ -191,6 +179,7 @@ a {
   list-style-type: none;
   padding: 0;
   margin: 5px 0;
+  margin-left: 10px;
 }
 
 .note-list li {
@@ -219,7 +208,11 @@ a {
   display: none;
 }
 
-/* Body CSS */
+/* BODY CSS */
+
+#note-name {
+  text-align: center;
+}
 
 body {
   color: black;
@@ -228,7 +221,39 @@ body {
   padding: 0;
 }
 
+/* EDITOR/MAIN CSS */
+
 main {
-  margin-left: 17rem;
   padding: 1rem;
+  margin-left: 17rem;
+}
+
+.editorButton {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.editor-container {
+  padding-left: 20px;
+}
+.editor-form {
+  margin: 10px 0;
+}
+.editor-form button {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.editor-content {
+  margin-right: 20px; /* Add this */
+  border: 1px solid #111;
+  padding: 20px;
+}
+.editor-form button.active {
+  border: 1px solid crimson;
 }

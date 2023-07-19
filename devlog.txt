@@ -1,0 +1,56 @@
+6/30/23
+12:03am - 3:03am
+-coding navbar with tutorial from 'fireship' on youtube, but putting my own style and twist on things
+
+4:25pm-5:25pm
+-finished coding on navbar for dark mode, will add a light mode later
+
+7/12/23 
+6pm - 730pm 
+-researching embedded text editors for the right fit for my project, researching existing web applications for inspiration
+
+7/13/23 
+3pm - 6:30pm
+-added sidebar
+-wrote DOM manipulation JavaScript function(addNotebookDropdown) to add notebook and note container which contain: the notebook element which can hide or show on click by adding a css class, the list for notes within the notebook, the button to add new notes to this list on click, 
+ and appending these to the notebook dropdown which is appended the notebook-list already existing in the html code. 
+-wrote css code for basic styling of these elements.
+
+7pm - 8:30pm
+-added function for form creation and removal when clicking the 'add note button'
+-added event listeners when clicking submit or pressing enter to submit form which gets added to 'notelist ul' in notebook dropdown using placeholder function
+-added auto focus on input field
+
+7/14/23
+5:45pm - 6:25pm
+-added function for adding note to noteList upon submission of form, repurposing notebook code to help create code
+-created elements and event listeners for delete and edit buttons
+-added placeholder console log when clicking on note, intending on later adding functionality of the note pulling up note data from local storage
+-appending this placeholder link, delete, and edit buttons to noteItem, and appending noteItem to noteList created earlier
+
+7pm - 8:05pm
+-created event listeners for clicking submit button for notebook or pressing enter, calling addNotebookDropdown function and clearing field
+-added functions and edited event listeners for edit and delete buttons of notes and notebooks
+
+7/17/23
+2:45am-5am
+-coded basic rich text editor with help from youtube tutorial
+
+7/18/23
+3:25pm-4:50pm
+-reading through text editor code to see how I might add more features
+-added active state check on buttons when caret is moved
+-troubleshooting, fixed ability to remove active state
+
+5:35pm - 6:45pm
+-importing text editor to main project and fixing conflicts
+-cleaning up code, styling significant elements for functionality such as editor-content class
+
+7/19/23
+12:25am-3:25am
+-added local storage functionality for notebooks and notes including: saving, updating, editing
+-added save button to text editor which saves contents of text editor to local storage to corresponding notes selected as well
+
+7/19/23
+3pm-4:15pm
+-added ability to properly delete notebooks/associated notes as well as individual notes themselves from local storage
