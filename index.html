@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>Animated Navbar</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li class="logo">
+          <a href="#" class="nav-link">
+            <span class="logo-text">Home</span>
+            <span class="material-symbols-outlined arrow"> double_arrow </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined"> note_add </span>
+            <span class="link-text">Custom Notes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined"> file_present </span>
+            <span class="link-text">From File</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined"> mic </span>
+            <span class="link-text">From Audio</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined"> psychology </span>
+            <span class="link-text">AI Notes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="material-symbols-outlined"> light_mode </span>
+            <span class="link-text">Dark/Light Mode</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Beginning of sidebar -->
+    <div class="sidebar">
+      <div class="notebooks">
+        <div class="add-notebook">
+          <input
+            type="text"
+            id="notebook-input"
+            placeholder="Enter notebook name"
+          />
+          <button id="add-notebook-btn">Add Notebook</button>
+        </div>
+        <ul class="notebook-list">
+          <!-- Notebook dropdowns dynamically added via JavaScript -->
+        </ul>
+      </div>
+    </div>
+    <main>
+      <h1>This is my navbar...</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac semper
+        justo. Proin luctus, lacus vitae commodo tristique, quam justo ultricies
+        ipsum, a ultricies turpis lorem nec mi. Suspendisse blandit ligula at
+        dui posuere dignissim. Integer pretium, est eu aliquet ultrices, tortor
+        velit commodo sem, sit amet condimentum nunc nunc in lectus. Fusce ut
+        sapien vitae lectus rutrum feugiat. In hac habitasse platea dictumst.
+        Curabitur faucibus nunc ac purus aliquam, id tempor mauris aliquam.
+        Vestibulum non elit tincidunt, rhoncus justo at, ullamcorper ligula.
+        <br /><br />
+        Nullam volutpat pharetra luctus. Sed consectetur eros id leo commodo,
+        non tristique ex varius. Aenean sed pharetra odio. Integer volutpat
+        ultrices tortor non pharetra. Fusce dictum, sapien ac ullamcorper
+        fermentum, orci lorem convallis nisi, non interdum elit metus vel nunc.
+        Mauris pellentesque dolor a purus euismod, sit amet cursus ligula
+        fermentum. Sed sed elementum mauris. Vestibulum et lectus vitae sem
+        congue rutrum. Phasellus ut luctus massa.
+        <br /><br />
+        Praesent pellentesque velit id gravida ultricies. Maecenas id semper
+        ligula. Duis sit amet aliquam sem, vitae varius urna. Donec mattis massa
+        ac erat aliquam, eu tincidunt nulla lobortis. Vivamus rhoncus, nisl id
+        efficitur euismod, neque arcu aliquet felis, sit amet fermentum sapien
+        sapien nec erat. Mauris non risus vel mi consectetur finibus. Sed nec
+        placerat ligula. Ut posuere sem eu lorem sollicitudin, id ultricies est
+        rhoncus. Sed tempor facilisis nibh, id aliquam massa. Morbi pellentesque
+        consequat nisi, id posuere ex vehicula vitae.
+        <br /><br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac semper
+        justo. Proin luctus, lacus vitae commodo tristique, quam justo ultricies
+        ipsum, a ultricies turpis lorem nec mi. Suspendisse blandit ligula at
+        dui posuere dignissim. Integer pretium, est eu aliquet ultrices, tortor
+        velit commodo sem, sit amet condimentum nunc nunc in lectus. Fusce ut
+        sapien vitae lectus rutrum feugiat. In hac habitasse platea dictumst.
+        Curabitur faucibus nunc ac purus aliquam, id tempor mauris aliquam.
+        Vestibulum non elit tincidunt, rhoncus justo at, ullamcorper ligula.
+        <br /><br />
+        Nullam volutpat pharetra luctus. Sed consectetur eros id leo commodo,
+        non tristique ex varius. Aenean sed pharetra odio. Integer volutpat
+        ultrices tortor non pharetra. Fusce dictum, sapien ac ullamcorper
+        fermentum, orci lorem convallis nisi, non interdum elit metus vel nunc.
+        Mauris pellentesque dolor a purus euismod, sit amet cursus ligula
+        fermentum. Sed sed elementum mauris. Vestibulum et lectus vitae sem
+        congue rutrum. Phasellus ut luctus massa.
+        <br /><br />
+        Praesent pellentesque velit id gravida ultricies. Maecenas id semper
+        ligula. Duis sit amet aliquam sem, vitae varius urna. Donec mattis massa
+        ac erat aliquam, eu tincidunt nulla lobortis. Vivamus rhoncus, nisl id
+        efficitur euismod, neque arcu aliquet felis, sit amet fermentum sapien
+        sapien nec erat. Mauris non risus vel mi consectetur finibus. Sed nec
+        placerat ligula. Ut posuere sem eu lorem sollicitudin, id ultricies est
+        rhoncus. Sed tempor facilisis nibh, id aliquam massa. Morbi pellentesque
+        consequat nisi, id posuere ex vehicula vitae.
+      </p>
+    </main>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

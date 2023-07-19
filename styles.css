@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+/* NAVBAR CSS */
+
+:root {
+  font-size: 16px;
+  font-family: 'Libre Baskerville', serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width var(--transition-speed) ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  filter: grayscale(100%) opacity(0.7);
+  transition: 400ms ease;
+}
+
+.logo {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+/* .arrow {
+  transform: rotateY(0deg);
+  transform: transform var(--transition-speed);
+} */
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.material-symbols-outlined {
+  font-size: 4rem;
+  margin: 0 0.5rem;
+  color: #29f8fe;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  transition: var(--transition-speed) ease;
+}
+
+/* small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+  }
+  .navbar:hover {
+    width: 17rem;
+  }
+  .navbar:hover .link-text {
+    display: block;
+  }
+  .navbar:hover .logo-text {
+    display: block;
+  }
+  .nav-item:nth-child(-n + 5) {
+    margin-top: 30px;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+  .main {
+    margin: 0;
+  }
+}
+
+/* .navbar:hover .arrow {
+  transform: rotateY(-180deg);
+  transition: transform var(--transition-speed);
+} */
+
+/* CONTINUE TUTORIAL AT !0M */
+
+/* Side bar and notebook css */
+
+.sidebar {
+  width: 11rem;
+  height: 100vh;
+  background-color: #f1f1f1;
+  float: left;
+  padding: 10px;
+  margin-left: 5rem;
+}
+
+.add-notebook input[type='text'] {
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.notebook-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.notebook-list .notebook {
+  margin-bottom: 10px;
+}
+
+.notebook-list .notebook > a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+
+.notebook-list .notebook > a:hover {
+  background-color: #eaeaea;
+}
+
+.note-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.note-list li {
+  margin-bottom: 3px;
+}
+
+.note-list a {
+  display: block;
+  padding: 3px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.note-list a:hover {
+  background-color: #eaeaea;
+}
+
+.add-notebook-btn {
+  margin-left: 5px;
+}
+/* hides note list when clicking on corresponding notebook */
+.note-list.hidden {
+  display: none;
+}
+
+/* Body CSS */
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-left: 17rem;
+  padding: 1rem;
+}
