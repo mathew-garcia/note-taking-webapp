@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Iterate through each notebook
   notebooks.forEach(function (notebook) {
-    // Add a notebook dropdown to the UI
     var notebookDropdown = addNotebookDropdown(notebook.name);
 
     // Iterate through each note in the notebook and add it to the UI
@@ -107,6 +106,39 @@ document.addEventListener('DOMContentLoaded', function () {
     noteList.appendChild(noteItem);
   }
 
+  // Function to show the note input field when adding a new note
+  function showNoteInput(noteList) {
+    var noteInput = document.createElement('input');
+    var noteSubmitBtn = document.createElement('button');
+    noteSubmitBtn.textContent = 'Submit';
+
+    function submitForm() {
+      if (noteInput.value.trim() !== '') {
+        addNoteToList(noteInput.value, noteList);
+        noteInput.remove();
+        noteSubmitBtn.remove();
+        saveNotebooks();
+      }
+    }
+
+    noteSubmitBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      submitForm();
+    });
+
+    noteInput.addEventListener('keyup', function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        submitForm();
+      }
+    });
+
+    noteList.appendChild(noteInput);
+    noteList.appendChild(noteSubmitBtn);
+
+    noteInput.focus();
+  }
+
   // Function to delete a notebook
   function deleteNotebook(notebookDropdown) {
     var notebookName = notebookDropdown.querySelector('a').textContent;
@@ -169,12 +201,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Function to get the content of a note
+  // Functions for updating header and note content in text editor
+
   function getNoteContent(noteName) {
     return localStorage.getItem(noteName) || '';
   }
 
-  // Function to update the current note name and load its content
+  function loadNoteContent(noteName) {
+    var noteContent = getNoteContent(noteName);
+    var editorContent = document.querySelector('.editor-content');
+    editorContent.innerHTML = noteContent;
+  }
+
   function updateNoteName(noteName) {
     var noteNameElement = document.getElementById('note-name');
     noteNameElement.textContent = noteName;
@@ -182,45 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadNoteContent(noteName);
   }
 
-  // Function to load the content of a note
-  function loadNoteContent(noteName) {
-    var noteContent = getNoteContent(noteName);
-    var editorContent = document.querySelector('.editor-content');
-    editorContent.innerHTML = noteContent;
-  }
-
-  // Function to show the note input field when adding a new note
-  function showNoteInput(noteList) {
-    var noteInput = document.createElement('input');
-    var noteSubmitBtn = document.createElement('button');
-    noteSubmitBtn.textContent = 'Submit';
-
-    function submitForm() {
-      if (noteInput.value.trim() !== '') {
-        addNoteToList(noteInput.value, noteList);
-        noteInput.remove();
-        noteSubmitBtn.remove();
-        saveNotebooks();
-      }
-    }
-
-    noteSubmitBtn.addEventListener('click', function (event) {
-      event.preventDefault();
-      submitForm();
-    });
-
-    noteInput.addEventListener('keyup', function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        submitForm();
-      }
-    });
-
-    noteList.appendChild(noteInput);
-    noteList.appendChild(noteSubmitBtn);
-
-    noteInput.focus();
-  }
+  // SAVING TO LOCAL STORAGE FUNCTIONS
 
   // Function to save the notebooks to local storage
   function saveNotebooks() {
@@ -237,14 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     localStorage.setItem('notebooks', JSON.stringify(notebooks));
   }
-
-  document
-    .getElementById('save-note-button')
-    .addEventListener('click', function () {
-      var editorContent = document.querySelector('.editor-content');
-      var noteContent = editorContent.innerHTML;
-      saveNoteContent(selectedNote, noteContent);
-    });
 
   // Function to save the content of a note to local storage
   function saveNoteContent(noteName, noteContent) {
@@ -269,6 +261,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // EVENT LISTENERS
+
+  // Event listeners for saving note content and populating note content
+
+  document
+    .getElementById('save-note-button')
+    .addEventListener('click', function () {
+      var editorContent = document.querySelector('.editor-content');
+      var noteContent = editorContent.innerHTML;
+      saveNoteContent(selectedNote, noteContent);
+    });
+
+  document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.matches('.note-list a')) {
+      var noteName = target.textContent;
+      updateNoteName(noteName);
+    }
+  });
+
+  // Event listeners for adding notebooks
   document
     .getElementById('add-notebook-btn')
     .addEventListener('click', function () {
@@ -296,8 +309,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+  // EDITOR FUNCTION
+
   (function () {
-    // Function to create the editor
     function createEditor(parentElement) {
       const editorContainer = parentElement;
       editorContainer.classList.add('editor-container');

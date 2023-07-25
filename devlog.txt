@@ -54,3 +54,8 @@
 7/19/23
 3pm-4:15pm
 -added ability to properly delete notebooks/associated notes as well as individual notes themselves from local storage
+
+7/22/23
+2pm-4pm
+-cleaning up and reorganizing code, adding some comments
+-added new css for a more finished feel, trying to add transition to link-text but it's not working. will figure out later

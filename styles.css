@@ -73,6 +73,8 @@ body::-webkit-scrollbar-thumb {
 .link-text {
   display: none;
   margin-left: 1rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .material-symbols-outlined {
@@ -90,61 +92,7 @@ a {
   transition: var(--transition-speed) ease;
 }
 
-/* SMALL SCREENS NAVBAR CSS */
-@media only screen and (max-width: 600px) {
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-  }
-  .logo {
-    display: none;
-  }
-  .navbar-nav {
-    flex-direction: row;
-  }
-  .nav-link {
-    justify-content: center;
-  }
-}
-
-/* LARGE SCREENS NAVBAR CSS */
-@media only screen and (min-width: 600px) {
-  .navbar {
-    width: 5rem;
-    height: 100vh;
-  }
-  .navbar:hover {
-    width: 17rem;
-  }
-  .navbar:hover .link-text {
-    display: block;
-  }
-  .navbar:hover .logo-text {
-    display: block;
-  }
-  .nav-item:nth-child(-n + 5) {
-    margin-top: 30px;
-  }
-
-  .nav-item:last-child {
-    margin-top: auto;
-  }
-  .main {
-    margin: 0;
-  }
-}
-
 /* SIDE BAR AND NOTEBOOK/NOTES CSS */
-
-.sidebar {
-  width: 11rem;
-  height: 100vh;
-  background-color: #f1f1f1;
-  float: left;
-  padding: 10px;
-  margin-left: 5rem;
-}
 
 .add-notebook input[type='text'] {
   margin-right: 5px;
@@ -221,11 +169,23 @@ body {
   padding: 0;
 }
 
+button {
+  background-color: #9a9a9d;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: background-color 400ms ease;
+}
+
+button:hover {
+  background-color: #29f8fe;
+  transition: var(--transition-speed) ease;
+}
+
 /* EDITOR/MAIN CSS */
 
 main {
   padding: 1rem;
-  margin-left: 17rem;
 }
 
 .editorButton {
@@ -234,6 +194,7 @@ main {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .editor-container {
@@ -252,8 +213,78 @@ main {
 .editor-content {
   margin-right: 20px; /* Add this */
   border: 1px solid #111;
+  border-radius: 5px;
   padding: 20px;
 }
 .editor-form button.active {
-  border: 1px solid crimson;
+  border: 1px solid #29f8fe;
+  background-color: #29f8fe;
+}
+
+/* SMALL SCREENS CSS */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  .sidebar {
+    width: 11rem;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    float: left;
+    padding: 10px;
+    margin-left: 0rem;
+  }
+  main {
+    margin-left: 12rem;
+  }
+}
+
+/* LARGE SCREENS CSS */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+  }
+  .navbar:hover {
+    width: 17rem;
+  }
+  .navbar:hover .link-text {
+    display: block;
+    opacity: 1;
+  }
+  .navbar:hover .logo-text {
+    display: block;
+  }
+  .nav-item:nth-child(-n + 5) {
+    margin-top: 30px;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+  .main {
+    margin: 0;
+  }
+  .sidebar {
+    width: 11rem;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    float: left;
+    padding: 10px;
+    margin-left: 5rem;
+  }
+  main {
+    margin-left: 17rem;
+  }
 }
